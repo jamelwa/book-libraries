@@ -34,17 +34,17 @@
                                         <p class="justify-self-end">{{$book->year_published_only_year}}</p>
                                         <div class="flex">
                                             <a href="{{route('book.edit', ['book' => $book])}}"
-                                               class="mx-1 w-1/2 bg-yellow-500 font-extrabold text-white">
+                                               class="mx-1 w-1/2 bg-yellow-500 font-extrabold text-blue-800">
                                                 <span class="">
-                                                    <i class="fa fa-pen text-sm text-red-300"></i>
+                                                    <i class="fa fa-pen text-sm"></i>
                                                 </span>
                                             </a>
                                             <button
                                                 data-url="{{route('book.destroy', ['book' => $book])}}"
                                                 data-book-id="{{$book->id}}"
-                                                class="remove-book-button mx-1 w-1/2 bg-yellow-500 font-extrabold text-white">
+                                                class="remove-book-button mx-1 w-1/2 bg-yellow-500 font-extrabold text-red-600">
                                                 <span class="">
-                                                    <i class="fa fa-pen text-sm text-red-300"></i>
+                                                    <i class="fa fa-times text-sm"></i>
                                                 </span>
                                             </button>
                                         </div>
@@ -63,6 +63,7 @@
                             <button
                                 class="remove-library-button mx-2 py-2 mt-2 h-full w-full bg-red-400 justify-self-center self-center font-bold uppercase text-xl text-white tracking-widest"
                                 data-library="{{$library->id}}"
+                                data-url="{{route('library.destroy', [$library])}}"
                             >
                                 Remove Library
                             </button>

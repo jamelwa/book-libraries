@@ -68,10 +68,10 @@ $(document).ready(function () {
         });
     }
 
-    const removeLibrary = (e, libraryId) => {
+    const removeLibrary = (e, libraryId, url) => {
         e.stopImmediatePropagation();
 
-        let removeLibraryUrl = 'http://localhost:8001/library/' + libraryId;
+        let removeLibraryUrl = url;
 
         $.ajaxSetup({
             headers: {
@@ -300,9 +300,10 @@ $(document).ready(function () {
         e.stopImmediatePropagation();
 
         const libraryId = $(e.currentTarget).data('library');
+        const url = $(e.currentTarget).data('url');
 
         $('#confirmation-modal').fadeIn();
-        $('#confirm-remove-library-button').on('click', (e) => removeLibrary(e, libraryId));
+        $('#confirm-remove-library-button').on('click', (e) => removeLibrary(e, libraryId, url));
     });
 
     $('#cancel-remove-library-button').on('click', (e) => {
